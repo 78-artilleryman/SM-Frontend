@@ -23,6 +23,7 @@ export interface SaveFileGetResponse {
         errorDetails: string[];
         isTemporary: string;
         createdAt: string;
+        uploadDate: number[];
       },
     ];
     number: number;
@@ -47,6 +48,18 @@ export interface SaveFileGetResponse {
 }
 
 export interface SaveFilePostResponse {
+  code: number;
+  message: string;
+  result:
+    | string
+    | {
+        errorClass: string;
+        errorMessage: string;
+      };
+  success: boolean;
+}
+
+export interface SaveFilePacthResponse {
   code: number;
   message: string;
   result:
